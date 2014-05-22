@@ -20,15 +20,6 @@
              Firefox 3.6 focus border issues.  Initially, don't display flashContent div so it won't show 
              if JavaScript disabled.
         -->
-
-        <script src="/socket.io/socket.io.js"></script>
-        <script>
-          var socket = io.connect('http://localhost');
-          socket.on('message', function (data) {
-            console.log(data);
-          });
-        </script>
-
         <style type="text/css" media="screen"> 
             html, body  { height:100%; }
             body { margin:0; padding:0; overflow:auto; text-align:center; 
@@ -36,6 +27,14 @@
             object:focus { outline:none; }
             #flashContent { display:none; }
         </style>
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+          var socket = io.connect('http://localhost');
+          socket.on('data', function (data) {
+            console.log(data);
+          });
+        </script>
         
         <!-- Enable Browser History by replacing useBrowserHistory tokens with two hyphens -->
         <!-- BEGIN Browser History required section -->
