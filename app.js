@@ -17,7 +17,7 @@ app.get('/', function (req, res) {
 });
 
 io.configure(function() {
-  io.set('transports', ['websocket','flashsocket','xhr-polling']);
+  io.set('transports', ['flashsocket']);
   io.set('flash policy port', 10843);
 });
 
