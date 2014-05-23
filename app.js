@@ -16,10 +16,10 @@ app.get('/', function (req, res) {
   res.sendfile(__dirname + '/Startup.html');
 });
 
-//io.configure(function() {
-  //io.set('transports', ['websocket']);
-  //io.set('flash policy port', 10843);
-//});
+/*io.configure(function() {
+  io.set('transports', ['websocket', 'flashsocket', 'xhr-polling']);
+  io.set('flash policy port', 10843);
+});*/
 
 io.sockets.on('connection', function (socket) {
   socket.on('data', function (data) {
