@@ -19,10 +19,11 @@ app.get('/', function (req, res) {
 io.configure(function() {
   io.set('transports', ['websocket','xhr-polling']);
   io.set('flash policy port', 10843);
+  //io.set('log level', 1);
 });
 
 io.sockets.on('connection', function (socket) {
-  socket.on('data', function (data) {
+  socket.on('message', function (data) {
     console.log(data);
   });
 });
